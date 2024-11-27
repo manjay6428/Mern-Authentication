@@ -20,7 +20,7 @@ const Signup = () => {
       });
       console.log("Signup successful", response.data);
       toast("Signup successful");
-      localStorage.setItem("authToken", response.data.token);
+      localStorage.setItem("token", response.data.token);
       navigate("/login");
     } catch (err) {
       toast.error(err.response.data);

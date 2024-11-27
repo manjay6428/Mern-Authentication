@@ -15,9 +15,11 @@ const Login = () => {
         email,
         password,
       });
+      const { token, user } = response.data;
       console.log("Login successful", response.data);
       toast("Signup successful");
-      localStorage.setItem("authToken", response.data.token);
+      localStorage.setItem("token", token);
+      localStorage.setItem("userDetails", JSON.stringify(user));
       navigate("/home");
     } catch (err) {
       toast.error(err.response.data.message);
